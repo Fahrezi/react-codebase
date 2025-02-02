@@ -3,11 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import AppRoutes from './routes/AppRoutes.tsx'
 import { QueryProvider } from './providers/QueryProvider.tsx'
+import MainLayout from './layout/MainLayout.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryProvider>
-      <AppRoutes />
+      <MainLayout>
+        <AppRoutes />
+      </MainLayout>
     </QueryProvider>
   </StrictMode>,
 )

@@ -1,16 +1,9 @@
-import React from 'react'
-import { useFetchUsers } from '../api/queries/authUsers'
+import BarChart from './dashboard/bar-chart';
 
 function HomePage() {
-  const { data } = useFetchUsers();
   return (
     <div>
-      {data?.map((user: any) => (
-        <div style={{ alignItems: 'center', display: 'flex', gap: '1rem' }}>
-          <h1>{user.id}</h1>
-          <p>{user.name}</p>
-        </div>
-      ))}
+      <BarChart />
     </div>
   )
 }

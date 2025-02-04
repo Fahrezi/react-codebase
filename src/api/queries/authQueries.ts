@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { apiClient } from "../clients/apiClient"
-import { authEndpoints } from "../endpoints/authEndpoints"
+import { authEndpoints } from "../endpoints"
 
 export const useLogin = () => {
   return useMutation({

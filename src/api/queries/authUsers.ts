@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "../clients/apiClient";
-import { authUsers } from "../endpoints/authUsers";
+import { authUsers } from "../endpoints";
 
 export const useFetchUsers = () => {
   return useQuery({

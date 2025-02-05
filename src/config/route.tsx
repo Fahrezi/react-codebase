@@ -5,13 +5,13 @@ import MENUS from "./menus";
 // import Infrastructure from "src/pages/dashboard/infrastructure";
 import AuthProvider from "src/layouts/AuthProvider";
 import HomePage from "src/pages/HomePage";
-// import RolePermission from "src/layouts/RolePermission";
-// import { PERMISSION } from "./permissions";
+import RolePermission from "src/layouts/RolePermission";
+import { PERMISSION } from "./permissions";
 
 // Pages Authentication
-// const AuthenticationLogin = React.lazy(
-//   () => import("src/pages/authentication/login")
-// );
+const AuthenticationLogin = React.lazy(
+  () => import("src/pages/authentication/login")
+);
 // const AuthenticationLoginVerifyOtp = React.lazy(
 //   () => import("src/pages/authentication/verify-otp")
 // );
@@ -73,7 +73,7 @@ const LoadingComponent = (
 const router = createBrowserRouter([
   {
     path: MENUS.HOME,
-    element: <HomePage />,
+    element: <AuthenticationLogin />,
   },
   // {
   //   path: MENUS.AUTHENTICATION_LOGIN,
@@ -121,16 +121,16 @@ const router = createBrowserRouter([
   //   ),
   // },
   // DASHBOARD
-  // {
-  //   path: MENUS.DASHBOARD_INFRASTRUCTURE,
-  //   element: (
-  //     <AuthProvider>
-  //       <RolePermission role={PERMISSION.INFRASTRUCTURE_VIEW}>
-  //         <Infrastructure />
-  //       </RolePermission>
-  //     </AuthProvider>
-  //   ),
-  // },
+  {
+    path: MENUS.DASHBOARD,
+    element: (
+      <AuthProvider>
+        <RolePermission role={PERMISSION.INFRASTRUCTURE_VIEW}>
+          <HomePage />
+        </RolePermission>
+      </AuthProvider>
+    ),
+  },
 
   // ADMIN
   // {

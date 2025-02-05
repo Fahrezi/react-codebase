@@ -1,6 +1,6 @@
 import { Box } from "@legion-ui/core";
 import { Fragment } from "react";
-import { useFetchDataBarChart } from "src/api/queries/dashboardInfrastructure";
+import { useFetchDataBarChart } from "src/api/queries/infrastructureQueries";
 import BarChartCard from "src/components/DashboardCharts/BarChart/BarChartCard";
 
 export type SeriesType = {

@@ -6,5 +6,5 @@ export const useFetchUsers = () => {
   return useQuery({
     queryKey: ['users'],
     queryFn: () => apiClient.get(authUsers.users).then((res) => res.data)
-  })
+  });
 };

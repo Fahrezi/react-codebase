@@ -1,12 +1,28 @@
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { apiClient } from "../clients/apiClient"
 import { authEndpoints } from "../endpoints"
+import { AxiosError } from "axios";
+import { useNavigate } from "react-router";
+
+type LoginData = { email: string; password: string };
+type LoginResponse = { token: string };
+type ErrorResponse = { message: string };
 
 export const useLogin = () => {
-  return useMutation({
-    mutationFn: (credentials: { email: string, password: string }) => 
-      apiClient.post(authEndpoints.login, credentials)
-  });
+  const navigate = useNavigate();
+  const mutation = useMutation<LoginResponse, AxiosError<ErrorResponse>, LoginData>({
+    mutationFn: (credentials: LoginData) => 
+      apiClient.post(authEndpoints.login, credentials),
+    onSuccess: () => {
+      console.log('halo');
+      navigate('/dashboard');
+    }
+  })
+
+  return {
+    ...mutation,
+    errorMessage: mutation.error?.response?.data?.message || '',
+  }
 };
 
 export const useFetchData = (userId: string) => {

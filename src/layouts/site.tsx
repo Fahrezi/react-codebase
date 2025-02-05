@@ -12,15 +12,16 @@ import {
 } from "@legion-ui/core";
 import Header from "./header";
 import Footer from "./footer";
-import { store, useAppSelector } from "src/store";
-import { selectUserState } from "src/services/auth/user-slice";
-import { Icon } from "src/components/Icon";
+// import { store, useAppSelector } from "src/store";
+// import { selectUserState } from "src/services/auth/user-slice";
+// import { Icon } from "src/components/Icon";
 // import { storeDataSelectedFilter } from "src/services/filter/populate-data";
 import dayjs from "dayjs";
 import { ProfileType } from "src/services/auth/types";
 import { UserProfileByToken } from "src/services/auth/http";
 import MENUS from "src/config/menus";
 import { logoutUser } from "src/services/base/api";
+import { Icon } from "src/components/Icon";
 
 type SiteProps = {
   children: ReactNode;
@@ -28,7 +29,11 @@ type SiteProps = {
 
 const Site: FC<SiteProps> = ({ children }) => {
   const navigate = useNavigate();
-  const { profile } = useAppSelector(selectUserState);
+  // const { profile } = useAppSelector(selectUserState);
+  const profile = {
+    permissions: ['INFRASTRUCTURE_VIEW'],
+    menu: [],
+  };
   const { pathname } = useLocation();
   const [navMode] = useState("withLogo");
   const [isSidebarCollapse, setIsSidebarCollapse] = useState<boolean>(false);

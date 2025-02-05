@@ -1,3 +1,3 @@
 export * from './authEndpoints';
-export * from './authUsers';
+export * from './usersEndpoints';
 export * from './infrastructureEndpoints';

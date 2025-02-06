@@ -14,7 +14,6 @@
     "@emotion/styled": "^11.14.0",
     "@legion-ui/core": "^2.2.10",
     "@legion-ui/dates": "^2.2.10",
-    "@tailwindcss/vite": "^4.0.3",
     "@tanstack/react-query": "^4.36.1",
     "axios": "^1.7.9",
     "dayjs": "^1.11.13",
@@ -24,8 +23,7 @@
     "react-dom": "^18.3.1",
     "react-feather": "^2.0.10",
     "react-hook-form": "^7.54.2",
-    "react-router": "^7.1.3",
-    "tailwindcss": "^4.0.3"
+    "react-router": "^7.1.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

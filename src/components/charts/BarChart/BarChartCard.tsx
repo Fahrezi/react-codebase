@@ -1,10 +1,10 @@
 import {
   CardContent,
   CardContentProps,
-} from "src/components/Elements/Card/CardContent";
+} from "src/components/elements/Card/CardContent";
 import BarChartBase, {
   BarChartBaseProps,
-} from "src/components/Elements/Chart/BarChartBase";
+} from "src/components/elements/Chart/BarChartBase";
 
 interface BarChartCardProps extends CardContentProps, BarChartBaseProps {}
 

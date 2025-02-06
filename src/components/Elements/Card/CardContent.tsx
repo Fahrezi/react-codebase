@@ -1,5 +1,5 @@
 import { Card, Divider, Flex, Box } from "@legion-ui/core";
-import TitleTooltip from "src/components/TitleTooltip/TitleTooltip";
+import TitleTooltip from "src/components/elements/TitleTooltip/TitleTooltip";
 
 export interface CardContentProps {
   children?: React.ReactNode;

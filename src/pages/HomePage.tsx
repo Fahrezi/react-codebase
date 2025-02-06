@@ -1,4 +1,4 @@
-import BarChart from './dashboard/bar-chart';
+import BarChart from './dashboard/BarChart';
 
 function HomePage() {
   return (

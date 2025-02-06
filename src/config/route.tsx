@@ -10,7 +10,7 @@ import { PERMISSION } from "./permissions";
 
 // Pages Authentication
 const AuthenticationLogin = React.lazy(
-  () => import("src/pages/authentication/login")
+  () => import("src/pages/authentication/Login")
 );
 // const AuthenticationLoginVerifyOtp = React.lazy(
 //   () => import("src/pages/authentication/verify-otp")
@@ -60,9 +60,9 @@ const AuthenticationLogin = React.lazy(
 // const StartingPage = React.lazy(() => import("../pages/utility/starting-page"));
 // const Maintenance = React.lazy(() => import("../pages/utility/maintenance"));
 const ErrorNotFound = React.lazy(
-  () => import("src/pages/utility/error-not-found")
+  () => import("src/pages/utility/ErrorNotFound")
 );
-const ErrorServer = React.lazy(() => import("src/pages/utility/error-server"));
+const ErrorServer = React.lazy(() => import("src/pages/utility/ErrorServer"));
 
 const LoadingComponent = (
   <Flex alignX='center' alignY='center' height='100vh'>

@@ -1,10 +1,10 @@
 import {
   CardContent,
   CardContentProps,
-} from "src/components/Elements/Card/CardContent";
+} from "src/components/elements/Card/CardContent";
 import StackedColumnChartBase, {
   StackedColumnChartBaseProps,
-} from "src/components/Elements/Chart/StackedColumnChartBase";
+} from "src/components/elements/Chart/StackedColumnChartBase";
 
 interface StackedColumnChartCardProps
   extends CardContentProps,

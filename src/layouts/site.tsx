@@ -21,7 +21,7 @@ import { ProfileType } from "src/services/auth/types";
 import { UserProfileByToken } from "src/services/auth/http";
 import MENUS from "src/config/menus";
 import { logoutUser } from "src/services/base/api";
-import { Icon } from "src/components/Icon";
+import { Icon } from "src/components/icons";
 
 type SiteProps = {
   children: ReactNode;

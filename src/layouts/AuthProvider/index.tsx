@@ -2,6 +2,7 @@ import { Flex, Spinner } from "@legion-ui/core";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import MENUS from "src/config/menus";
+import { getLocalStorage } from "src/utils/storage";
 // import { selectUserState } from "src/services/auth/user-slice";
 // import { useAppSelector } from "src/store";
 
@@ -10,13 +11,12 @@ type Props = {
 };
 
 const AuthProvider = ({ children }: Props): JSX.Element => {
-  const [isAuthenticated] = useState(true);
+  const isAuthenticated = getLocalStorage("token");
 
   const navigate = useNavigate();
-
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate(MENUS.AUTHENTICATION_LOGIN);
+      navigate(MENUS.HOME);
     }
   }, [isAuthenticated]);
 

@@ -5,6 +5,7 @@ import ImgBgLogin from "src/assets/bg-login.jpg";
 import { useNavigate } from "react-router";
 import MENUS from "src/config/menus";
 import dayjs from "dayjs";
+import { getLocalStorage } from "src/utils/storage";
 
 interface AuthProps {
   title: string;
@@ -15,11 +16,11 @@ interface AuthProps {
 
 const Auth: FC<AuthProps> = ({ title, desc, children }) => {
   const navigate = useNavigate();
-  const [ isAuthenticated ] = useState(false);
+  const isAuthenticated = getLocalStorage("token");
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(MENUS.PROFILE);
+      navigate(MENUS.DASHBOARD);
     }
   }, [isAuthenticated]);
 
@@ -32,7 +33,7 @@ const Auth: FC<AuthProps> = ({ title, desc, children }) => {
           style={{ overflow: "auto" }}
         >
           <Box
-            as='form'
+            as='div'
             margin='auto'
             padding='44px 24px'
             width={{ xl: "464px", lg: "100%" }}

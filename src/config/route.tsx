@@ -4,7 +4,7 @@ import { Spinner, Flex } from "@legion-ui/core";
 import MENUS from "./menus";
 // import Infrastructure from "src/pages/dashboard/infrastructure";
 import AuthProvider from "src/layouts/AuthProvider";
-import HomePage from "src/pages/HomePage";
+import HomePage from "src/pages/HomePage/HomePage";
 import RolePermission from "src/layouts/RolePermission";
 import { PERMISSION } from "./permissions";
 

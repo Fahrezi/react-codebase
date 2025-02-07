@@ -1,5 +1,5 @@
 import Auth from "../auth";
-import LoginForm from "src/components/forms/Login";
+import LoginForm from "src/components/forms/Login/Login";
 
 const LoginPage = () => {
   return (

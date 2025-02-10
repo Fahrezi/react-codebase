@@ -1,6 +1,6 @@
 import { Box } from "@legion-ui/core";
 import { Fragment } from "react";
-import { useFetchDataBarChart } from "src/api/queries/infrastructureQueries";
+import { useFetchDataBarChart } from "src/services/queries/infrastructureQueries";
 import BarChartCard from "src/components/charts/BarChart/BarChartCard";
 
 export type SeriesType = {
@@ -11,8 +11,10 @@ export type SeriesType = {
 export type columnChartTypes = {
   title: string;
   tooltip: string;
-  labels: string[];
-  series: SeriesType[];
+  data: {
+    labels: string[];
+    series: SeriesType[];
+  };
   isLoading: boolean;
   error?: any;
 };
@@ -21,8 +23,10 @@ const BarChart = () => {
   const defaultColumnChart: columnChartTypes = {
     title: "",
     tooltip: "",
-    labels: [],
-    series: [],
+    data: {
+      labels: [],
+      series: [],
+    },
     isLoading: true,
   };
 
@@ -55,15 +59,15 @@ const BarChart = () => {
 
   return (
     <Fragment>
-      <Box width={{ xl: "50%", md: "100%" }} padding='12px'>
+      <Box width={{ xl: "50%", md: "100%" }} padding="12px">
         <BarChartCard
-          title='Bar Chart Example'
-          tooltip='Bar Chart Example'
-          labels={data.labels}  
+          title="Bar Chart Example"
+          tooltip="Bar Chart Example"
+          labels={data.labels}
           chartProps={chartProps}
           series={data.series}
           isLoading={data.isLoading}
-          />
+        />
       </Box>
     </Fragment>
   );

@@ -13,7 +13,12 @@ const userSchema = z.object({
   status: z.enum(["active", "inactive"], {
     message: "Status is required"
   }),
-})
+});
+
+const SELECT_OPTION = [
+  { value: "user", label: "User" },
+  { value: "admin", label: "Admin" },
+];
 
 function UserForm() {
   const {
@@ -45,6 +50,7 @@ function UserForm() {
           control={control}
           render={({ field: { onChange, onBlur, name } }) => (
             <Textfield
+              block
               padding='16px 0'
               label="Name"
               placeholder="Enter your name"
@@ -65,6 +71,7 @@ function UserForm() {
           name="email"
           render={({ field: { onChange, onBlur, name } }) => (
             <Textfield
+              block
               padding='16px 0'
               label='Email Address'
               placeholder='hello@mail.com'
@@ -83,17 +90,14 @@ function UserForm() {
         <Controller
           name="role"
           control={control}
-          render={({ field: { onChange } }) => (
+          render={({ field: { onChange, value } }) => (
             <Select
               label="Role"
               onChange={(value) => onChange(value[0].value)}
-              // defaultValue={[{ value: "user", label: "User" }]}
+              defaultValue={SELECT_OPTION.filter((option) => option.value === value)}
               message={errors?.role?.message as string}
               status={errors?.role ? "error" : "normal"}
-              options={[
-                { value: "user", label: "User" },
-                { value: "admin", label: "Admin" },
-              ]}
+              options={SELECT_OPTION}
             />
           )}
         />

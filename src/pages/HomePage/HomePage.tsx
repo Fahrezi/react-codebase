@@ -1,6 +1,7 @@
 import UserForm from 'src/components/forms/User';
 import BarChart from '../dashboard/BarChart';
 import styles from './styles.module.css';
+import InfiniteMenu from './component/InfiniteMenu';
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
         <h2>Form User</h2>
         <UserForm />
       </section>
+      <InfiniteMenu className={styles['infinite-menu']} size={500} />
     </div>
   )
 }

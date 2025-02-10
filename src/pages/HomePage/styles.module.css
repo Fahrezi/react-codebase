@@ -1,5 +1,6 @@
 .root {
   padding: 20px;
+  position: relative;
 }
 
 .container {
@@ -9,4 +10,10 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+.infinite-menu {
+  position: fixed;
+  bottom: -210px;
+  right: -210px;
 }

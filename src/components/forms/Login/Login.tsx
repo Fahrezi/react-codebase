@@ -1,3 +1,4 @@
+import * as z from 'zod';
 import { Box, Button, Checkbox, Flex, Text, Textfield } from '@legion-ui/core';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { EyeOff, Eye } from 'react-feather';
@@ -5,15 +6,22 @@ import { useForm, Controller } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router';
 import { useLogin } from 'src/api/queries';
 import MENUS from 'src/config/menus';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 type LoginForm = {
   email: string
   password: string
 };
 
+const loginSchema = z.object({
+  email: z.string().email("Invalid email format"),
+  password: z.string(),
+});
+
 function LoginForm() {
   const navigate = useNavigate();
   const { handleSubmit, control } = useForm<LoginForm>({
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: '',
       password: '',

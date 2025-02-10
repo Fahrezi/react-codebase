@@ -1,8 +1,10 @@
 .form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  display: block;
   margin-bottom: 1rem;
+}
+
+.form > div {
+  padding: 16px 0;
 }
 
 .radio-container > h4 + div {
@@ -15,4 +17,12 @@
 .radio-container > h4 {
   margin: 0;
   margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }

@@ -11,7 +11,7 @@ type Props = {
 };
 
 const AuthProvider = ({ children }: Props): JSX.Element => {
-  const isAuthenticated = getLocalStorage("token");
+  const isAuthenticated = getLocalStorage("platform_user");
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -21,12 +21,12 @@ const AuthProvider = ({ children }: Props): JSX.Element => {
   }, [isAuthenticated]);
 
   if (isAuthenticated) {
-    return <div className='main'>{children}</div>;
+    return <div className="main">{children}</div>;
   }
 
   return (
-    <Flex alignX='center' alignY='center' height='100vh'>
-      <Spinner data-testid='spinner' />
+    <Flex alignX="center" alignY="center" height="100vh">
+      <Spinner data-testid="spinner" />
     </Flex>
   );
 };

@@ -1,16 +1,17 @@
-import * as z from 'zod';
-import { Box, Button, Checkbox, Flex, Text, Textfield } from '@legion-ui/core';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { EyeOff, Eye } from 'react-feather';
-import { useForm, Controller } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router';
-import { useLogin } from 'src/api/queries';
-import MENUS from 'src/config/menus';
-import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from "zod";
+import { Box, Button, Checkbox, Flex, Text, Textfield } from "@legion-ui/core";
+import { ChangeEvent, useEffect, useState } from "react";
+import { EyeOff, Eye } from "react-feather";
+import { useForm, Controller } from "react-hook-form";
+import { Link, useNavigate } from "react-router";
+// import { useLogin } from 'src/api/queries';
+import MENUS from "src/config/menus";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useLogin } from "src/services/queries";
 
 type LoginForm = {
-  email: string
-  password: string
+  email: string;
+  password: string;
 };
 
 const loginSchema = z.object({
@@ -23,9 +24,9 @@ function LoginForm() {
   const { handleSubmit, control } = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: '',
-      password: '',
-    }
+      email: "",
+      password: "",
+    },
   });
   const { mutate: loginUser, isLoading, errorMessage } = useLogin();
   const [rememberMe, setRememberMe] = useState(false);
@@ -53,35 +54,35 @@ function LoginForm() {
   );
 
   useEffect(() => {
-    if(errorMessage) {
+    if (errorMessage) {
       setIsError(true);
     }
-  }, [errorMessage])
+  }, [errorMessage]);
 
   return (
     <form onSubmit={handleSubmit((data) => loginUser(data))}>
-      <Controller 
+      <Controller
         control={control}
         name="email"
         render={({ field: { onChange, name } }) => (
           <Textfield
-            padding='16px 0'
-            label='Email Address'
-            placeholder='hello@mail.com'
+            padding="16px 0"
+            label="Email Address"
+            placeholder="hello@mail.com"
             name={name}
-            type='email'
+            type="email"
             onChange={onChange}
             block
           />
         )}
       />
-      <Controller 
+      <Controller
         control={control}
         name="password"
         render={({ field: { onChange, name } }) => (
           <Textfield
-            label='Password'
-            placeholder='password'
+            label="Password"
+            placeholder="password"
             type={showTypePass ? "text" : "password"}
             name={name}
             onChange={onChange}
@@ -90,23 +91,23 @@ function LoginForm() {
           />
         )}
       />
-      <Flex padding='24px 0' alignX='space-between'>
+      <Flex padding="24px 0" alignX="space-between">
         <Checkbox
-          data-testid='remember-me'
-          label='Remember Me'
+          data-testid="remember-me"
+          label="Remember Me"
           onChange={handleRememberMe}
         />
         <Link to={MENUS.AUTHENTICATION_FORGOT_PASSWORD}>Forgot Password</Link>
       </Flex>
-      {(isError && errorMessage) && (
-        <Box alignX='center'>
-          <Text as='span' color='#FF0000' mb='8px' block>
+      {isError && errorMessage && (
+        <Box alignX="center">
+          <Text as="span" color="#FF0000" mb="8px" block>
             {errorMessage}
           </Text>
         </Box>
       )}
       <Button
-        margin='0 0 24px 0'
+        margin="0 0 24px 0"
         type="submit"
         center
         block
@@ -116,7 +117,7 @@ function LoginForm() {
       </Button>
 
       <Button
-        variant='soft'
+        variant="soft"
         onClick={() => navigate(MENUS.AUTHENTICATION_REGISTER)}
         center
         block
@@ -124,7 +125,7 @@ function LoginForm() {
         Sign Up
       </Button>
     </form>
-  )
+  );
 }
 
-export default LoginForm
+export default LoginForm;

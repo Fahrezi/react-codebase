@@ -3,17 +3,8 @@
   position: relative;
 }
 
-.container {
-  background: #fff;
-  border: solid 1px #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.infinite-menu {
+/* .infinite-menu {
   position: fixed;
-  bottom: -210px;
-  right: -210px;
-}
+  bottom: -50px;
+  right: -250px;
+} */

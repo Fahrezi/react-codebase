@@ -33,6 +33,9 @@ const MENUS = {
   UTILITY_MAINTENANCE: "/utility/maintenance",
   UTILITY_ERROR_NOT_FOUND: "/utility/error-not-found",
   UTILITY_ERROR_SERVER: "/utility/error-server",
+
+  // Showcase - Development Needs
+  SHOWCASE: "/showcase",
 };
 
 export default MENUS;

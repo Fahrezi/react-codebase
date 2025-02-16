@@ -16,7 +16,7 @@ interface AuthProps {
 
 const Auth: FC<AuthProps> = ({ title, desc, children }) => {
   const navigate = useNavigate();
-  const isAuthenticated = getLocalStorage("token");
+  const isAuthenticated = getLocalStorage(import.meta.env.VITE_USER_DATA);
 
   useEffect(() => {
     if (isAuthenticated) {

@@ -7,6 +7,7 @@ import AuthProvider from "src/layouts/AuthProvider";
 import HomePage from "src/pages/HomePage/HomePage";
 import RolePermission from "src/layouts/RolePermission";
 import { PERMISSION } from "./permissions";
+import ShowCase from "src/pages/ShowCase";
 
 // Pages Authentication
 const AuthenticationLogin = React.lazy(
@@ -127,6 +128,18 @@ const router = createBrowserRouter([
       <AuthProvider>
         <RolePermission role={PERMISSION.INFRASTRUCTURE_VIEW}>
           <HomePage />
+        </RolePermission>
+      </AuthProvider>
+    ),
+  },
+
+  // SHOWCASE
+  {
+    path: MENUS.SHOWCASE,
+    element: (
+      <AuthProvider>
+        <RolePermission role={PERMISSION.INFRASTRUCTURE_VIEW}>
+          <ShowCase />
         </RolePermission>
       </AuthProvider>
     ),

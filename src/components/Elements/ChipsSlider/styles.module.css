@@ -1,0 +1,44 @@
+.root {
+  overflow-x: auto;
+  margin: 0 -20px;
+  scrollbar-color: transparent transparent;
+  width: calc(100% + (2*20px));
+}
+
+.root > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: max-content;
+}
+
+.root > div > span {
+  padding: 4px 8px 4px 8px !important;
+  height: auto !important;
+}
+
+.root > div > span > span {
+  padding-left: 4px;
+  padding-right: 4px !important;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.primary {
+  background-color: #0b66af !important;
+  border-color: #0B66AF !important;
+  color: #fff !important;
+}
+
+.primary:hover {
+  background-color: rgba(11, 102, 175, 0.9) !important;
+}
+
+.primary-active, .primary-active:hover {
+  background-color: #DFECF5 !important;
+  border-color: #DFECF5 !important;
+  color: #0B66AF !important;
+}

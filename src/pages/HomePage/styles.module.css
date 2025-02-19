@@ -1,10 +1,5 @@
 .root {
   padding: 20px;
   position: relative;
+  overflow-x: hidden;
 }
-
-/* .infinite-menu {
-  position: fixed;
-  bottom: -50px;
-  right: -250px;
-} */

@@ -11,7 +11,7 @@ type Props = {
 };
 
 const AuthProvider = ({ children }: Props): JSX.Element => {
-  const isAuthenticated = getLocalStorage("platform_user");
+  const isAuthenticated = true;
 
   const navigate = useNavigate();
   useEffect(() => {

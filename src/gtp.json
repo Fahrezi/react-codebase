@@ -15,7 +15,7 @@
           "type": "color"
         },
         "200": {
-          "value": "#edaab9",
+          "value": "#dfecf5",
           "type": "color"
         },
         "300": {
@@ -27,7 +27,7 @@
           "type": "color"
         },
         "500": {
-          "value": "#d22b50",
+          "value": "#0b66af",
           "type": "color",
           "description": "Base"
         },
